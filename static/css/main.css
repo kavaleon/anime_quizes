@@ -1,0 +1,234 @@
+body{
+    background: black;
+    margin: 0px;
+    width: 100vw;
+
+}
+section, footer{
+    background: white;
+    border: 2px solid white;
+    padding: 5px;
+    position: relative;
+}
+a:-webkit-any-link{
+    color: white;
+    cursor: pointer;
+    text-decoration: blink;
+}
+section{
+/*margin-left: 50px;*/
+}
+.header{
+    height: 100%;
+    margin: 0px;
+    background: black;
+    background-image: url("../img/subtract.png");
+    background-position-x: center;
+    width: 100%;
+    background-size: cover;
+    }
+.icon{
+    width: 10%;
+    position: absolute;
+    left: 5%;
+}
+h2{
+    font-size: 32px;
+    margin: 0px;
+    color: black;
+    font-family: "animeacev3";
+
+}
+h4{
+    font-size: 13px;
+    margin-top: 0px;
+    font-family: "CodecPro-Regular";
+    color: #FFA5BB;
+}
+.container{
+    background: #F2EECB;
+    row-gap: 80px;
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 1fr 10%;
+}
+footer, header{
+    grid-column: 1/3;
+}
+}
+.authors{
+    overflow-y: scroll;
+}
+section{
+    min-height: 300px;
+    text-align: -webkit-center;
+}
+.quiz{
+    min-height: 100px;
+    min-width: 100px;
+    margin: 5px;
+    background: mediumpurple;
+    display: inline-grid;
+    text-align: center;
+    border: white solid 2px;
+}
+#form2{
+    text-align: center;
+    background: mediumpurple;
+    width: 30%;
+    border: 2px solid white;
+}
+.vhod{
+    margin: 5px;
+}
+.cabinet{
+    min-height: 50px;
+    min-width: 50px;
+    background: rebeccapurple;
+    width: 100px;
+    height: 100px;
+    display: inline-grid;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border: 2px white solid;
+    text-align: center;
+    }
+.questions_table{
+    width:90%;
+    overflow-y: scroll;
+    height: 350px;
+    background: #ae7fdd;
+    border: 2px white solid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+.quizes_table{
+    width:90%;
+    overflow-y: scroll;
+    height: 120px;
+    background: #ae7fdd;
+    border: 2px white solid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+.column{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+td{
+    border: 1px white solid;
+}
+table{
+    border-spacing: 0px;
+}
+.modal{
+    display: none;
+    background: RGBA(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top:0px;
+    left:0px;
+}
+.modal:target{
+    display:block;
+}
+.modal_dialog{
+    color: aliceblue;
+    background: #673AB7;
+    border: 2px solid;
+    border-radius: 10px;
+    min-height: 40%;
+    min-width: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+.modal_close{
+    position: absolute;
+    top: -9px;
+    right:-9px;
+    background:#f36b6b;
+    border: 1px solid brown;
+    border-radius: 50%;
+    height:20px;
+    width:20px;
+    text-decoration: auto;
+    color: brown;
+    transition: all 700ms;
+}
+.modal_close:hover{
+    transform:rotate(180deg);
+}
+#form1{
+    background: #254391;
+    margin: auto;
+    /*padding: 10px;*/
+    text-align: right;
+    display: grid;
+    gap: 10px;
+
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: repeat(11, 1fr);
+}
+li{
+    position: relative;
+}
+.nav_open{
+    align-content: center;
+    color: black;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-image: url("../img/user.jpg");
+    position: absolute;
+    right: 3%;
+    background-size: contain;
+    top: 2%;
+}
+.nav_open:hover + nav{
+    right: 1%;
+}
+nav>ul>li{
+    display: inline-block;
+    margin: 0px 10px;
+    transition: all 700ms;
+    padding: 15px;
+    position: relative;
+}
+ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+nav{
+    border: 2px solid white;
+    width: 15%;
+    background: #673AB7;
+    margin: auto;
+    position: absolute;
+    transition: 700ms;
+    /*right: -250px;*/
+    top: 140px;
+    color: white;
+}
+nav>ul>li:hover{
+    background: #ae7fdd;
+}
+nav:hover{
+    right: 1%;
+}
+.content{
+
+background-image: url("../img/quiz_all.png")}
+
+
+

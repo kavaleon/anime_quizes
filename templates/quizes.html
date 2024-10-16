@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<h2>content</h2>
+
+{% block content %}
+<article>
+
+    <div class="content">
+        {% if all_quizes %}
+                {% for quiz in all_quizes %}
+                    <div class="quiz"><a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a></div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</article>
+{% endblock %}00
