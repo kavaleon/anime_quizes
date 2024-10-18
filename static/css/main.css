@@ -4,7 +4,7 @@ body{
     width: 100vw;
 
 }
-section, footer{
+footer{
     background: white;
     border: 2px solid white;
     padding: 5px;
@@ -16,13 +16,16 @@ a:-webkit-any-link{
     text-decoration: blink;
 }
 section{
-/*margin-left: 50px;*/
+    width: 80%;
+
+    justify-self: center;
+    background: #F2EECB
 }
 .header{
     height: 100%;
     margin: 0px;
     background: black;
-    background-image: url("../img/subtract.png");
+    background-image: url("../img/header.png");
     background-position-x: center;
     width: 100%;
     background-size: cover;
@@ -69,10 +72,13 @@ section{
     min-height: 100px;
     min-width: 100px;
     margin: 5px;
-    background: mediumpurple;
+    background-image: url(../img/quiz.png);
     display: inline-grid;
-    text-align: center;
-    border: white solid 2px;
+    /* text-align: center; */
+    /* border: white solid 2px; */
+    background-size: cover;
+    height: 50%;
+    width: 18%;
 }
 #form2{
     text-align: center;
@@ -227,9 +233,20 @@ nav:hover{
     right: 1%;
 }
 .content{
-
-background-image: url("../img/quiz_all.png")
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    /* margin: 10px; */
+    height: 100%;
+    /* background-size: cover; */
+    /* background-image: url(../img/quiz_all.png);*/
 }
-
+article{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url(../img/quiz_favourite.png);
+}
 
 
