@@ -2,17 +2,21 @@
 <h2>content</h2>
 
 {% block content %}
-<article>
+<article class="quizes_favourite">
 
     <div class="content">
         {% if all_quizes %}
                 {% for quiz in all_quizes %}
-                    <div class="quiz"><a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a></div>
+                    <div class="quiz">
+                        <div style="background-image: url(../static/img/pic1.png);background-size: cover;height: 80%;margin-top: auto;">
+                            <a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a>
+                        </div>
+                    </div>
             {% endfor %}
         {% endif %}
     </div>
 </article>
-<article>
+<article class="quizes_all">
 
     <div class="content">
         {% if all_quizes %}
