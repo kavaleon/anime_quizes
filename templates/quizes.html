@@ -2,28 +2,48 @@
 <h2>content</h2>
 
 {% block content %}
-<article class="quizes_favourite">
+<section class="quizes_statistic">
+    <div class="text_month">ЧЕГО ТАМ <span>ЗА</span> МЕСЯЦ</div>
+    <div class="text_random">Я пока хз что сюда вставить, наверное здесь будут какие-то цитаты. Это текст для примера</div>
+    <div class="statistic">
+
+    </div>
+</section>
+<section id="quizes_top">
+    <div class="text_quiz_top">КВИЗ <span>ТОП</span></div>
+    <div class="text_random">Я пока хз что сюда вставить, наверное здесь будут какие-то цитаты. Это текст для примера</div>
+    <div class="quiz_top1"></div>
+    <div class="quizes_top">
+        {% if all_quizes %}
+                {% for quiz in all_quizes %}
+                    <div class="quiz">
+                        <a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a>
+                    </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+<section class="quizes_favourite">
+    <div class="favourite">
+        {% if all_quizes %}
+                {% for quiz in all_quizes %}
+                        <div class="quiz">
+                            <a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a>
+                        </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
+<section class="quizes_all">
 
     <div class="content">
         {% if all_quizes %}
                 {% for quiz in all_quizes %}
                     <div class="quiz">
-                        <div style="background-image: url(../static/img/pic1.png);background-size: cover;height: 80%;margin-top: auto;">
-                            <a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a>
-                        </div>
+                        <a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a>
                     </div>
             {% endfor %}
         {% endif %}
     </div>
-</article>
-<article class="quizes_all">
-
-    <div class="content">
-        {% if all_quizes %}
-                {% for quiz in all_quizes %}
-                    <div class="quiz"><a href="/test/?quiz={{quiz.id}}">{{quiz.name}}</a></div>
-            {% endfor %}
-        {% endif %}
-    </div>
-</article>
+</section>
 {% endblock %}00

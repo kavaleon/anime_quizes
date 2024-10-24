@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 </head>
 <body>
-    <div class="container">
         <header>
             <div class="header">
 
@@ -20,7 +19,7 @@
                     <a href="/quizes/">На главную</a>
                 </div>
 
-                <div class="nav_open">
+                <div class="cabinet">
                     {% if name %}
                         <h3>{{name}}</h3>
                     {% endif %}
@@ -49,6 +48,5 @@
         <h3>Гончаревич Ульяна Сергеевна  tg: @kafaleon</h3>
     </footer>
 
-    </div>
 </body>
 </html>
