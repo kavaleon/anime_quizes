@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, session, request, redirect
 import os
 from models import *
 from sqlalchemy import select
-
+from flask import jsonify
 def check_info(info, errors_2):
     errors = []
     if not info['age']:
@@ -91,12 +91,13 @@ app = Flask(__name__,
 
 app.config['SECRET_KEY'] = 'ABRACADABRA' # обязательно для работы в сессии
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_PATH}'
+app.config['JSON_AS_ASCII'] = False
 errors_2 = {'name': 'Неверный ввод', 'surname': 'Неверный ввод',
                 'age': ['Возраст не указан', 'Возраст от 10 до 90 лет'], 'email': 'Нет email', 'password': 'Нет пароля',
                 'ch_password': 'Пароли не совпадают'}
 
 db.init_app(app)
-with app.app_context():
+with (app.app_context()):
     create_data()
     @app.route('/', methods=['POST', 'GET'])
     def index():
@@ -211,7 +212,6 @@ with app.app_context():
             print(info)
             return render_template('test.html', values=info)
 
-
     @app.route('/result/')
     def result():
         return render_template('result.html', total=session['total'], answer=session['right_answer'])
@@ -285,6 +285,52 @@ with app.app_context():
         info = Statistic.query.all()
         print(info)
         return render_template('statistic.html', values=info)
+
+    @app.route('/api/quizes/', methods=['GET'])
+    def return_json_quizes():
+        quizes_json = []
+        quizes = Quiz.query.all()
+        for quiz in quizes:
+            quizes_json.append({"quiz_name": quiz.name})
+        print(quizes_json)
+
+        return jsonify(quizes_json)
+
+    @app.route('/api/questions/', methods=['GET'])
+    def return_json_questions():
+        questions_json = []
+        questions = Question.query.all()
+        for question in questions:
+            questions_json.append({"question_name": question.quest})
+        print(questions_json)
+
+        return jsonify(questions_json)
+
+
+    @app.route('/api/quiz/<int:id>/', methods=['GET'])
+    def return_json_quiz(id):
+        quiz = Quiz.query.get(id)
+        quiz_json = {'id': quiz.id,
+                         'quiz_name': quiz.name,
+                         'quiz_icon': quiz.icon,
+                         'quiz_user_id': quiz.user_id
+                     }
+        print(quiz_json)
+
+        return jsonify(quiz_json)
+
+    @app.route('/api/question/<int:id>/', methods=['GET'])
+    def return_json_question(id):
+        question = Question.query.get(id)
+        question_json = {'id': question.id,
+                         'question_name': question.quest,
+                         'question_answer1': question.answer1,
+                         'question_answer2': question.answer2,
+                         'question_answer3': question.answer3,
+                         'question_answer_r': question.answer_r}
+        print(question_json)
+
+        return jsonify(question_json)
 
 app.run(debug=True, port=5500, host='0.0.0.0')
 

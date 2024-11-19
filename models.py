@@ -40,6 +40,8 @@ class Quiz(db.Model):
         self.name = name
         self.icon = icon
 
+    def __repr__(self):
+        return self.name
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -59,6 +61,7 @@ class Question(db.Model):
         self.answer2 = answer2
         self.answer3 = answer3
         self.answer_r = answer_r
+
 
 
 
